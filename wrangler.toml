@@ -1,0 +1,14 @@
+name = "links-mattcraig-tech"
+workers_dev = true
+compatibility_date = "2022-07-05"
+
+kv_namespaces = [
+         { binding = "LINKS", id = "c417540dc80341848459be44266387c7", preview_id = "9a6b8de0f73446a189ea9ebe1b8c45dc" }
+]
+main = "build/worker/shim.mjs"
+
+[vars]
+WORKERS_RS_VERSION = "0.0.9"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
