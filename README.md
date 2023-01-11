@@ -29,6 +29,12 @@ wrangler kv:namespace create "LINKS" --preview
 wrangler kv:namespace create "LINKS"
 ```
 
-You can choose a name other than `STATIC` for your namespace, but be sure to update the KV access in [libs.rs](src/lib.rs).
+You can choose a name other than `LINKS` for your namespace, but be sure to update the KV access in [libs.rs](src/lib.rs).
 
 You may also want to change the name of your worker in [wrangler.toml](wrangler.toml).
+
+### Continuous Deployment
+
+This repository includes a [Github Workflow](.github/workflows/workers_deploy.yml) that automatically publishes the latest version of the `master` branch on every push.
+
+For CD to work properly with the wrangler CLI, you must set up repository secrets named `CF_ACCOUNT_ID` and `CF_API_TOKEN` with your Cloudflare account ID and API token as described in the [wrangler system environment variables guide](https://developers.cloudflare.com/workers/wrangler/system-environment-variables/).
