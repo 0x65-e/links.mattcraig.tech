@@ -60,6 +60,8 @@ async fn list_links(env: &Env) -> Result<Response> {
         page.push_str(link.name.as_str());
         page.push_str("</a></p>");
     }
+    // Add link to home page of root domain
+    page.push_str("<br /><p><a class=\"hover-link\" href=\"https://mattcraig.tech\">&larr; mattcraig.tech</p>");
 
     page.push_str("</div></body>");
 
